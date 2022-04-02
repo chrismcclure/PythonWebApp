@@ -16,4 +16,4 @@ Step 3: navigate your browser to
 Step 4: Signup and save some notes
 
 That's it.
-![alt text](https://giphy.com/gifs/D6WuLOKOpR2fK)
+![giphy](https://user-images.githubusercontent.com/13955327/161389848-90e1a75d-e54a-4a17-8893-485f0f22bddb.gif)
