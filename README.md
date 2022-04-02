@@ -8,7 +8,10 @@ I made this from a tutorial to learn how to make a python web with flask
 Step 1: change your command line directory to PythonWedApp
 
 Step 2: run
+
+```
     python main.py
+```
 
 Step 3: navigate your browser to
 <localhost:5001>
