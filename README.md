@@ -5,7 +5,7 @@ I made this from a tutorial to learn how to make a python web with flask
 
 ## How to run it
 
-Step 1: change your command line directory to PythonWedApp
+Step 1: change your command line directory to PythonWebApp
 
 Step 2: run
 
