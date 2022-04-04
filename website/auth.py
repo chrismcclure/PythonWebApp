@@ -10,6 +10,7 @@ auth = Blueprint('auth', __name__)
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        # Test for a fake PR
         email = request.form.get('email')
         password = request.form.get('password')
 
