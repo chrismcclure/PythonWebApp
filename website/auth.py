@@ -1,3 +1,4 @@
+from website.static.Accessors.api_accessor import Api_Accessor
 from .models import User
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from . import db
@@ -9,6 +10,10 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    api_call = Api_Accessor()
+    result = api_call.call_api()
+    print(result)
+
     if request.method == 'POST':
         # Test for a fake PR
         email = request.form.get('email')
@@ -41,6 +46,8 @@ def logout():
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
+
+
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('firstName')
