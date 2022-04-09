@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  # -   repo: https://github.com/psf/black
+  #     name: black
+  #     rev: 22.1.0
+  #     files: dir /s
+  #     hooks:
+  #     - id: black
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    name: flake8
+    rev: v1.2.3
+    hooks:
+      - id: flake8
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "" # Use the sha / tag you want to point at
+    hooks:
+      - id: mypy
+
+  #  We use this at work and I need to get used to this formatting
+  # - repo: https://github.com/pycqa/pylint
+  #   rev: pylint-2.6.0
+  #   hooks:
+  #     - id: pylint
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "" # Use the sha or tag you want to point at
+    hooks:
+      - id: prettier
+
+  # This is also looking for all the files, not just the staged
+  # - repo: https://github.com/adrienverge/yamllint.git
+  #   rev: v1.17.0
+  #   hooks:
+  #     - id: yamllint
+  #       args: [-c=/path/to/.yamllint]
