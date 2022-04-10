@@ -6,11 +6,11 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
-  # -   repo: https://github.com/psf/black
-  #     name: black
-  #     rev: 22.1.0
-  #     files: dir /s
-  #     hooks:
+  # error with black on windows?
+  # https://lifesaver.codes/answer/pre-commit-hook-with-black-1046
+  # - repo: https://github.com/psf/black
+  #   rev: 21.12b0
+  #   hooks:
   #     - id: black
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -34,10 +34,3 @@ repos:
     rev: "" # Use the sha or tag you want to point at
     hooks:
       - id: prettier
-
-  # This is also looking for all the files, not just the staged
-  # - repo: https://github.com/adrienverge/yamllint.git
-  #   rev: v1.17.0
-  #   hooks:
-  #     - id: yamllint
-  #       args: [-c=/path/to/.yamllint]

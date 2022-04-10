@@ -1,3 +1,6 @@
 How to run the application:
 From the main folder(the one with the main.py in it)
 Run:  python main.py
+
+
+before making a commit run:  pre-commit run --all-files
