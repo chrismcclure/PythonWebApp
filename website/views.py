@@ -4,34 +4,35 @@ from .models import Note
 from . import db
 import json
 
-views = Blueprint('views', __name__)
+views = Blueprint("views", __name__)
 
 
-@views.route('/', methods=['GET', 'POST'])
+@views.route("/", methods=["GET", "POST"])
 @login_required  # you have to be logged in to go to the home page
 def home():
-    if request.method == 'POST':
-        note = request.form.get('note')
+    if request.method == "POST":
+        note = request.form.get("note")
 
         if len(note) < 1:
-            flash('Note is too short!', category='error')
+            flash("Note is too short!", category="error")
         else:
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            flash('Note added!', category='success')
+            flash("Note added!", category="success")
 
     return render_template("home.html", user=current_user)
 
-@views.route('/delete-note', methods=['POST'])
+
+@views.route("/delete-note", methods=["POST"])
 def delete_note():
     note = json.loads(request.data)
-    noteId = note['noteId']
+    noteId = note["noteId"]
     note = Note.query.get(noteId)
     if note:
         if note.user_id == current_user.id:
             db.session.delete(note)
             db.session.commit()
-            flash('Note deleted!', category='success')
+            flash("Note deleted!", category="success")
 
     return jsonify({})
