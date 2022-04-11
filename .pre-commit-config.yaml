@@ -24,12 +24,6 @@ repos:
     hooks:
       - id: mypy
 
-  #  We use this at work and I need to get used to this formatting
-  # - repo: https://github.com/pycqa/pylint
-  #   rev: pylint-2.6.0
-  #   hooks:
-  #     - id: pylint
-
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: "" # Use the sha or tag you want to point at
     hooks:

@@ -1,14 +1,15 @@
+"""initialize class for applciation"""
+from os import path
 from flask_login import LoginManager
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path
-
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
 
 def create_app():
+    """Entry point for the application"""
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "hjshjhdjah kjshkjdhjs"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
@@ -36,6 +37,7 @@ def create_app():
 
 
 def create_database(app):
+    """method toc reated the db if it doesn't exist"""
     if not path.exists("website/" + DB_NAME):
         db.create_all(app=app)
         print("Created Database!")
