@@ -6,7 +6,7 @@ on:
 
 jobs:
   semgrep:
-    name: Scan
+    name: Semgrep Scan
     runs-on: ubuntu-latest
     # Skip any PR created by dependabot to avoid permission issues
     if: (github.actor != 'dependabot[bot]')
@@ -26,7 +26,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7.4
+          python-version: 3.8
           architecture: x64
       - name: Checkout PyTorch
         uses: actions/checkout@master
@@ -38,3 +38,18 @@ jobs:
           checkName: "flake8_py3" # NOTE: this needs to be the same as the job name
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    name: Mypy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install Dependencies
+        run: |
+          pip install mypy
+      - name: mypy
+        run: |
+          mypy . --ignore-missing-imports

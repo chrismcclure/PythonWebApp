@@ -4,3 +4,9 @@ Run:  python main.py
 
 
 before making a commit run:  pre-commit run --all-files
+
+
+When running the docker container
+
+docker run -p "port that I want to use on my local host":"port exposed by container"  "name of image"
+docker run -p 8080:5001 test
