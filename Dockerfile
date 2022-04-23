@@ -4,11 +4,8 @@ COPY requirements.txt /app/
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
-
-RUN export SQLALCHEMY_TRACK_MODIFICATIONS=False
-
-RUN apt update
+RUN pip install -r requirements.txt &&\
+     apt update
 
 COPY . /app
 
