@@ -1,0 +1,31 @@
+How to run the application:
+From the main folder(the one with the main.py in it)
+Run:  python main.py
+
+
+before making a commit run:  pre-commit run --all-files
+
+
+When running the docker container
+
+docker run -p "port that I want to use on my local host":"port exposed by container"  "name of image"
+docker run -p 8080:5001 test
+
+How to shell into a container to see what is going on
+docker exec -it e545b2b0d3a7 sh
+
+# Docker build . -t $(version)
+
+
+Docker build . -t $(image-name)
+echo | set /p="$(password)" | Docker login --username $(username) --password-stdin
+docker image tag $(image-name) $(username)/$(image-name):latest
+docker image push $(username)/$(image-name):latest
+docker logout
+
+
+Chand directory quick
+cd "/mnt/c/K8sPlayground/PythonWebApp"
+
+How to run the make file
+make docker image-name=test
